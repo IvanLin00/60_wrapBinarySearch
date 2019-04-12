@@ -24,12 +24,19 @@ public class UserOfBinarySearch {
         int foundAt;     // index where value is found
         System.out.println();
         for( int i = 0; i < orderedList.size(); i++) {
+			int expectedCost = 0;
+			if (i==4) expectedCost=1;
+			if (i==1||i==7) expectedCost = 2;
+			if (i ==0|| i==2 || i== 5||i==8) expectedCost = 3;
+			if (i==3||i==6||i==9) expectedCost = 4;
+			
             findMe = orderedList.get( i);
             foundAt = orderedList.indexOf( findMe);
             System.out.println( 
                 "Value " + findMe
               + " was found at index " + foundAt
               + ". That's correct, eh? " + (foundAt == i)
+			  + "cost correct?" + (orderedList.getCost() == expectedCost)
               );
         }
         System.out.println();
@@ -38,9 +45,12 @@ public class UserOfBinarySearch {
         System.out.println( "search for MISSING values");
         findOne( "not in middle"
                , orderedList.get( orderedList.size() /2) +1);
+		System.out.println("cost correct: " + (orderedList.getCost() == 4));
         findOne( "before first ", orderedList.get(0) -5);
+		System.out.println("cost correct: " + (orderedList.getCost() == 3));
         findOne( "after last   "
                , orderedList.get( orderedList.size() -1) +5);
+		System.out.println("cost correct: " + (orderedList.getCost() == 4));
         System.out.println();
     }
 
