@@ -19,15 +19,16 @@ Decisions:
 - if( comparison == 0) 
 
 Solution to Base Cases: 
-Base Case 1 (if (low>hi)):
-return -2
-Base Case 2 (if( comparison == 0)):
-return pageToCheck
+
+- Base Case 1 (if (low>hi)):
+  - return -2
+- Base Case 2 (if( comparison == 0)):
+  - return pageToCheck
 
 Solution to Recursive Cases:
-Recursive Case 1 (if( comparison < 0)):
--No combining operator or leftover.
--Recursive Abstraction --> return indexOf_recursive( findMe, low, pageToCheck -1)
-Recursive Case 2 (if( comparison > 0)):
--No combining operator or leftover
--Recursive Abstraction --> return indexOf_recursive( findMe, pageToCheck +1, hi)
+- Recursive Case 1 (if( comparison < 0)):
+  - No combining operator or leftover.
+  - Recursive Abstraction --> return indexOf_recursive( findMe, low, pageToCheck -1)
+- Recursive Case 2 (if( comparison > 0)):
+  - No combining operator or leftover
+  - Recursive Abstraction --> return indexOf_recursive( findMe, pageToCheck +1, hi)
